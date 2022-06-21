@@ -1,7 +1,7 @@
 # wpsrpc-sdk
 WPS Office for Linux RPC API SDK
 
-The C++ SDK headers was taken from [wps_cpp](https://zouyingfeng.coding.net/public/wps/wps/git/files/master/cpp) with *no changes*:
+The C++ SDK headers was taken from [wps_cpp](https://code.aliyun.com/zouyingfeng/wps/tree/master/cpp) with *no changes*:
 ```
 Copyright @ 2012-2019, Kingsoft office,All rights reserved.
 ```
