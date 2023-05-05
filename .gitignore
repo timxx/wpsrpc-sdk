@@ -1,0 +1,9 @@
+build
+[dD]ebug
+[Rr]elease
+*.o
+*.so
+*.swp
+compile_commands.json
+.cache
+*.idx
