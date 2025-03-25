@@ -6,4 +6,4 @@ The C++ SDK headers was taken from [wps_cpp](https://code.aliyun.com/zouyingfeng
 Copyright @ 2012-2019, Kingsoft office,All rights reserved.
 ```
 
-The lib/x86_64 was extracted from [official package](https://wdl1.pcfg.cache.wpscdn.com/wpsdl/wpsoffice/download/linux/10702/wps-office_11.1.0.10702.XA_amd64.deb)
+The lib/x86_64 was extracted from [official package](https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2023/17900/wps-office_12.1.0.17900_amd64.deb)
