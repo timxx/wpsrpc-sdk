@@ -25,11 +25,20 @@ void test_EtBase::initTestCase() {
 
   hr = rpc->getEtApplication((IUnknown **)&app);
   QVERIFY(app != nullptr);
+
+  hr = rpc->getProcessPid(&pid);
+  QCOMPARE(hr, S_OK);
+  QVERIFY(pid > 0);
 }
 
 void test_EtBase::cleanupTestCase() {
   app->Quit();
   app->Release();
+
+  QThread::msleep(100);
+
+  // kill the process, as quit may not really work
+  system(QString("pkill -P %1").arg(pid).toUtf8().constData());
 }
 
 ks_bstr test_EtBase::getDataFile(const QString &filename) {

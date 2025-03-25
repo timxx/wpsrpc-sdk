@@ -27,6 +27,10 @@ void test_Base::initTestCase() {
 
   hr = rpc->getWpsApplication((IUnknown **)&app);
   QVERIFY(app != nullptr);
+
+  hr = rpc->getProcessPid(&pid);
+  QCOMPARE(hr, S_OK);
+  QVERIFY(pid > 0);
 }
 
 void test_Base::cleanupTestCase() {
@@ -35,4 +39,9 @@ void test_Base::cleanupTestCase() {
 
   // we can't free the rpc, otherwise it crashes...
   // delete rpc;
+
+  QThread::msleep(100);
+
+  // kill the process, as quit may not really work
+  system(QString("pkill -P %1").arg(pid).toUtf8().constData());
 }

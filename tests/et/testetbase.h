@@ -23,6 +23,7 @@ protected:
 
 protected:
   etapi::_Application *app = nullptr;
+  long long pid = 0;
 };
 
 #endif // WPS_RPC_SDK_TEST_ETBASE_H

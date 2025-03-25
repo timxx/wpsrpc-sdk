@@ -19,6 +19,9 @@ protected Q_SLOTS:
 
 protected:
   wpsapi::_Application *app = nullptr;
+
+private:
+  long long pid = 0;
 };
 
 #endif // WPS_RPC_SDK_TEST_BASE_H
