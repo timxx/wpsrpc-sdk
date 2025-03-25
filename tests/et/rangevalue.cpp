@@ -21,15 +21,6 @@ private Q_SLOTS:
   void rangeValue();
 
 private:
-  void getRange(_Worksheet *sheet, const WCHAR *cell, IRange **range) {
-    ks_bstr bstr(cell);
-
-    VARIANT var;
-    V_VT(&var) = VT_BSTR;
-    V_BSTR(&var) = bstr;
-    HRESULT hr = sheet->get_Range(var, *argMissing(), (Range **)range);
-    QCOMPARE(hr, S_OK);
-  }
 
   template <size_t N>
   void makeValue(int (&arr)[N], VARIANT *var) {

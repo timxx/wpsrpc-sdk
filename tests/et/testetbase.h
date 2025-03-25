@@ -2,6 +2,7 @@
 #define WPS_RPC_SDK_TEST_ETBASE_H
 
 #include <QObject>
+#include "comdef.h"
 
 namespace etapi {
 struct _Application;
@@ -15,6 +16,10 @@ class test_EtBase : public QObject {
 protected Q_SLOTS:
   void initTestCase();
   void cleanupTestCase();
+
+protected:
+  kfc::ks_bstr getDataFile(const QString &filename);
+  void getRange(etapi::_Worksheet *sheet, const WCHAR *cell, etapi::IRange **range);
 
 protected:
   etapi::_Application *app = nullptr;

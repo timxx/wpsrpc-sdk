@@ -31,3 +31,7 @@ endfunction(add_et_test)
 add_et_test(rangevalue
   rangevalue.cpp
 )
+
+add_et_test(charts
+  charts.cpp
+)

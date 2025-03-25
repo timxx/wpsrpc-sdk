@@ -1,8 +1,12 @@
 #include "testetbase.h"
 
 #include <QtTest/QtTest>
+#include <QCoreApplication>
 
 #include <et/etapi.h>
+
+using namespace etapi;
+using namespace kfc;
 
 VARIANT *argMissing() {
   static VARIANT s_varMissing;
@@ -26,4 +30,19 @@ void test_EtBase::initTestCase() {
 void test_EtBase::cleanupTestCase() {
   app->Quit();
   app->Release();
+}
+
+ks_bstr test_EtBase::getDataFile(const QString &filename) {
+  QString fullPath = qApp->applicationDirPath() + "/data/" + filename;
+  return ks_bstr(fullPath.utf16());
+}
+
+void test_EtBase::getRange(_Worksheet *sheet, const WCHAR *cell, IRange **range) {
+  ks_bstr bstr(cell);
+
+  VARIANT var;
+  V_VT(&var) = VT_BSTR;
+  V_BSTR(&var) = bstr;
+  HRESULT hr = sheet->get_Range(var, *argMissing(), (Range **)range);
+  QCOMPARE(hr, S_OK);
 }
