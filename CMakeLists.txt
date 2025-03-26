@@ -39,6 +39,13 @@ macro(ADD_TEST_TARGET target)
   )
   target_link_directories(${target} PRIVATE
     ${SDK_LIBS_ROOT}
+    /opt/kingsoft/wps-office/office6
+    /usr/lib/office6
+    /opt/apps/cn.wps.wps-office/files/kingsoft/wps-office/office6
+    /opt/apps/cn.wps.wps-office-pro/files/kingsoft/wps-office/office6
+  )
+  target_link_options(${target} PRIVATE
+    -Wl,--disable-new-dtags
   )
   add_test(NAME ${target} COMMAND ${target})
 endmacro()

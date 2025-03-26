@@ -20,7 +20,7 @@ target_precompile_headers(test_etbase PRIVATE
 function(add_et_test target)
   add_test_target(${target}
     SRCS ${ARGN}
-    LIBS rpcetapi_sysqt5 test_etbase
+    LIBS rpcetapi_wpsqt test_etbase
     INCS ${SDK_INCS_ROOT}/et
   )
   target_precompile_headers(${target}

@@ -20,7 +20,7 @@ target_precompile_headers(test_base PRIVATE
 function(add_wps_test target)
   add_test_target(${target}
     SRCS ${ARGN}
-    LIBS rpcwpsapi_sysqt5 test_base
+    LIBS rpcwpsapi_wpsqt test_base
     INCS ${SDK_INCS_ROOT}/wps
   )
   target_precompile_headers(${target}
