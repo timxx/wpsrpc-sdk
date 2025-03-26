@@ -206,6 +206,9 @@
 #	define X_CPU_ARM_64
 #elif defined(__sw_64__) ||defined(__alpha__)
 #	define X_CPU_SW_64
+#
+#elif defined(__loongarch__)
+#	define X_CPU_LOONGARCH
 #else
 #	error "Unknown CPU Arch!!!"
 #endif
