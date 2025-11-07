@@ -7,3 +7,5 @@ Copyright @ 2012-2019, Kingsoft office,All rights reserved.
 ```
 
 The lib/x86_64 was extracted from [official package](https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2023/17900/wps-office_12.1.0.17900_amd64.deb)
+
+The lib/aarch64 was extracted from KylinOS App Store(wps-office_11.8.2.1130.AK.preload.sw.withsn_arm64.deb)
